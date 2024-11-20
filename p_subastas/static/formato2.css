@@ -1,0 +1,77 @@
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.bar {
+    display: flex;
+    height: 40px;
+    background: rgb(226, 30, 48);
+    background: linear-gradient(-180deg
+    , rgba(226, 30, 48, 1) 0%, rgba(189, 26, 41, 1) 100%);
+}
+.contenedor {
+    width: 80%;
+    max-width: 800px;
+    border: 3px solid rgb(226, 30, 48);
+    border-radius: 15px;
+    padding: 20px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-top: 55px;
+
+    margin-left: 24%;
+}
+
+.contenido {
+    margin-bottom: 20px;
+}
+
+.ícono {
+    width: 135px;
+    height: 115px;
+    margin-bottom: 10px;
+}
+
+.mensaje {
+    color: rgb(226, 30, 48);
+    font-weight: bold;
+    font-size: 24px;
+    margin: 10px 0;
+}
+/*
+.contacto {
+    padding-top: 15%;
+    text-align: right;
+    font-size: 14px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.contacto p {
+    margin: 2px 0;
+} */
+#línea {
+    margin-top: 45px;
+    padding-bottom: 3px;
+    background-color: rgb(226, 30, 48);
+    width: 80%;
+}
+#subtítulo1 {
+    font-weight: normal;
+    margin-top: 50px;
+    padding: 5px 95px 5px 95px;
+    text-align: center;
+}
+#email {
+    font-size: 16px;
+    text-align: center;
+}
+#telefo {
+    font-size: 16px;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 55px;
+}

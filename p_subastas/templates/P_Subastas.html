@@ -1,0 +1,434 @@
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="{% static 'atlán.png' %}">
+    <link rel="stylesheet" href="{% static 'formato1.css' %}">
+    <title>Subastas</title>
+</head>
+<body>
+    <div class="barra">
+
+    </div>
+    <div class="botones">
+        <button class="botón-sección activo" data-sección="vehículos">Vehículos</button>
+        <button class="botón-sección" data-sección="otros">Otros Salvamentos</button>
+    </div>
+    <h1 id="título_subasta">Portal de Subastas</h1>
+    <div class="párrafo-contenedor">
+        <p>
+            Le damos la bienvenida al portal de subastas de salvamentos de la aseguradora. Lea las características del bien a subastar, coloque la información que se le indica y introduzca el valor a ofertar. Registraremos sus datos y nos pondremos en contacto con usted, de ser necesario.
+        </p>
+    </div>
+    <div id="vehículos" class="sección">
+        <div id="vehículos-container1">
+            <!-- Tarjeta de vehículo -->
+            <div class="tarjeta-vehículo1">
+                <div class="info-vehículo1">
+                    <h3>2015 TOYOTA CAMRY LE</h3>
+                    <div class="detalles-vehículo1">
+                        <div class="contenedor-imagen1">
+                            <img src="{% static 'Imagen de Prueba 1.png' %}" alt="Imagen del vehículo" onclick="abrirVisor1(0)">
+                            <p class="texto-miniatura1">Haga clic en la imagen</p>
+                        </div>
+                        <div class="detalles-textos1">
+                            <p><strong>ID vehicular (VIN):</strong> 4T1BF1FK5FU******</p>
+                            <p><strong>Kilometraje:</strong> 165,601 mi(ACTUAL)</p>
+                            <p><strong>Daño principal:</strong> AL COSTADO</p>
+                            <p><strong>Daño secundario:</strong> AL FRENTE</p>
+                            <p><strong>Cilindros:</strong> 4</p>
+                            <p><strong>Color:</strong> CHARCOAL</p>
+                            <p><strong>Tracción:</strong> Tracción delantera</p>
+                            <p><strong>Combustible:</strong> GAS</p>
+                            <p><strong>Motor:</strong> 2.5L 4</p>
+                            <p><strong>Transmisión:</strong> AUTOMÁTICO</p>
+                        </div>
+                    </div>
+                    <!-- Botón para mostrar el formulario -->
+                    <button class="btn-participar1" onclick="mostrarFormulario(this)">Participar en la Subasta</button>
+                </div>
+                <!-- Formulario de oferta (oculto por defecto) -->
+                <div class="formulario-oferta1" style="display: none;">
+                    <p><strong>Fecha máxima para ofertar:</strong> 31/12/2024</p>
+                    <p><strong>Puja mínima:</strong> $1,000</p>
+                    <form id="fm" method="POST" autocomplete="off">
+                        {% csrf_token %}
+                        <div id="form1">{{form1}}</div>
+                        <button type="submit" name="form1_submit" class="btn-ofertar1">
+                            Ofertar
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div id="visor1">
+                <button class="botón1 botón-cerrar1" onclick="cerrarVisor1()">X</button>
+                <button class="botón1 botón-anterior1" onclick="cambiarImagen1(-1)">&#10094;</button>
+                <img id="imagen-visor1" src="" alt="Vista ampliada">
+                <button class="botón1 botón-siguiente1" onclick="cambiarImagen1(1)">&#10095;</button>
+            </div>
+        </div>
+        <div id="vehículos-container2">
+            <!-- Tarjeta de vehículo -->
+             <!-- En caso de no haber, desde aquí se bloquea -->
+            <div class="tarjeta-vehículo2">
+                <div class="info-vehiculo2">
+                    <h3>2016 MITSUBISHI OUTLANDER SE</h3>
+                    <div class="detalles-vehículo2">
+                            <div class="contenedor-imagen2">
+                                <img src="{% static 'Imagen de Prueba 7.png' %}" alt="Imagen del vehículo" onclick="abrirVisor2(0)">
+                                <p class="texto-miniatura2">Haga clic en la imagen</p>
+                            </div>
+                        <div class="detalles-textos2">
+                            <p><strong>ID vehicular (VIN):</strong> JA4AD3A30GZ******</p>
+                            <p><strong>Kilometraje:</strong> 119,999 mi(ACTUAL)</p>
+                            <p><strong>Daño principal:</strong> DESGASTE NORMAL</p>
+                            <p><strong>Daño secundario:</strong></p>
+                            <p><strong>Cilindros:</strong> 4</p>
+                            <p><strong>Color:</strong> BLANCO</p>
+                            <p><strong>Tracción:</strong> Tracción delantera</p>
+                            <p><strong>Combustible:</strong> GAS</p>
+                            <p><strong>Motor:</strong> 2.4L 4</p>
+                            <p><strong>Transmisión:</strong> AUTOMÁTICO</p>
+                        </div>
+                    </div>
+                     <!-- Botón para mostrar el formulario -->
+                    <button class="btn-participar2" onclick="mostrarFormulario(this)">Participar en la Subasta</button>
+                </div>
+                <!-- Formulario de oferta (oculto por defecto) -->
+                <div class="formulario-oferta2" style="display: none;">
+                    <p><strong>Fecha máxima para ofertar:</strong> 31/12/2024</p>
+                    <p><strong>Puja mínima:</strong> $2,500</p>
+                    <form id="fm2" method="POST" autocomplete="off">
+                        {% csrf_token %}
+                        <div id="form2">{{form2}}</div>
+                        <button type="submit" name="form2_submit" class="btn-ofertar2">
+                            Ofertar
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div id="visor2">
+                <button class="botón2 botón-cerrar2" onclick="cerrarVisor2()">X</button>
+                <button class="botón2 botón-anterior2" onclick="cambiarImagen2(-1)">&#10094;</button>
+                <img id="imagen-visor2" src="" alt="Vista ampliada">
+                <button class="botón2 botón-siguiente2" onclick="cambiarImagen2(1)">&#10095;</button>
+            </div>
+            <!-- En caso de no haber, hasta aquí se bloquea -->
+        </div>
+    </div>
+    <div id="otros" class="sección" style="display: none;">
+        <div id="otros-container-x">
+            <!-- Tarjeta de vehículo -->
+            <div class="tarjeta-otros-x">
+                <div class="info-otros-x">
+                    <h3>No se registran subastas</h3>
+                    <!-- Desde aquí se bloquea, en dado caso, no haya nada -->
+                    <div class="detalles-otros-x">
+                            <div class="contenedor-imagen-x">
+                                <img src="{% static 'Imagen del dron 1.png' %}" alt="Imagen del artículo" onclick="abrirVisorx(0)">
+                                <p class="texto-miniatura-x">Haga clic en la imagen</p>
+                            </div>
+                        <div class="detalles-textos-x">
+                            <p><strong>Marca:</strong> DJI</p>
+                            <p><strong>Nombre del Modelo:</strong> Mini 2 SE</p>
+                            <p><strong>Resolución de Video:</strong> 2,7 K</p>
+                            <p><strong>Resolución inmóvil:</strong>12 MP</p>
+                            <p><strong>Conectividad:</strong> USB</p>
+                            <p><strong>Color:</strong> Blanco</p>
+                            <p><strong>Daño Principal:</strong> Grabación de Video</p>
+                            <p><strong>Daño Secundario:</strong> </p>
+                            <p><strong>Rango Máximo:</strong> 6,2 millas</p>
+                            <p><strong>Tipo de control:</strong> Control Remoto</p>
+                        </div>
+                    </div>
+                    <!-- Botón para mostrar el formulario -->
+                    <button class="btn-participar-x" onclick="mostrarFormulario(this)">Participar en la Subasta</button>
+                </div>
+                <!-- Formulario de oferta (oculto por defecto) -->
+                <div class="formulario-oferta-x" style="display: none;">
+                    <p><strong>Fecha máxima para ofertar:</strong> 31/12/2024</p>
+                    <p><strong>Puja mínima:</strong> $2,500</p>
+                    <form id="fm-x" method="POST" autocomplete="off">
+                        {% csrf_token %}
+                        <div id="formx">{{formx}}</div>
+                        <button type="submit" name="formx_submit" class="btn-ofertar-x">
+                            Ofertar
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div id="visor-x">
+                <button class="botón-x botón-cerrar-x" onclick="cerrarVisorx()">X</button>
+                <button class="botón-x botón-anterior-x" onclick="cambiarImagenx(-1)">&#10094;</button>
+                <img id="imagen-visor-x" src="" alt="Vista ampliada">
+                <button class="botón-x botón-siguiente-x" onclick="cambiarImagenx(1)">&#10095;</button>
+            </div>
+        </div>
+    </div>
+    <!-- Hasta aquí se bloquea, en caso de que no haya subasta -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const botones = document.querySelectorAll('.botón-sección');
+    
+            botones.forEach(boton => {
+                boton.addEventListener('click', function () {
+                    document.querySelectorAll('.sección').forEach(sección => {
+                        sección.style.display = 'none';
+                    });
+    
+                    const idSección = this.getAttribute('data-sección');
+                    document.getElementById(idSección).style.display = 'block';
+    
+                    botones.forEach(b => b.classList.remove('activo'));
+                    this.classList.add('activo');
+                });
+            });
+    
+            document.querySelector('.botón-sección.activo').click();
+        });
+    </script>    
+    <!-- Mensajes emergentes -->
+    <script>
+        function mostrarFormulario(button) {
+            // Encuentra el formulario correspondiente al botón
+            const formulario = button.parentElement.nextElementSibling;
+            formulario.style.display = formulario.style.display === "none" ? "block" : "none";
+        }
+    </script>
+
+    {% if message %}
+    <script>
+        // Mostrar el mensaje de error en una ventana emergente
+        alert("{{ message }}");
+    </script>
+    {% endif %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var sum1Input = document.querySelector('#form1 #id_oferta');
+
+            sum1Input.addEventListener('input', function() {
+            // Obtener el valor actual del campo y eliminar cualquier caracter no numérico
+                var value = this.value.replace(/[^\d.]/g, '');
+
+            // Si hay más de un punto decimal, eliminar los adicionales
+                var parts = value.split('.');
+                if (parts.length > 2) {
+                    parts = [parts.shift(), parts.join('.')];
+                }
+
+            // Formatear la parte entera como dólar
+                var integerPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+            // Si hay parte decimal, añadir la parte decimal formateada
+                var formattedValue = (parts.length === 2) ? '$' + integerPart + '.' + parts[1] : '$' + integerPart;
+
+            // Asignar el valor formateado de vuelta al campo visualmente
+                this.value = formattedValue;
+
+            // Actualizar el valor real del campo sin el símbolo de dólar ni las comas de separación
+            // Esto es necesario para que las validaciones en el primer script funcionen correctamente
+                this.dataset.realValue = value;
+            });
+            document.getElementById('fm').addEventListener('submit', function() {
+                var sum1Input = document.querySelector('#form1 #id_oferta');
+                var realValue = sum1Input.dataset.realValue;
+
+        // Asignar el valor real al campo antes de enviar el formulario. Cotizador del Seguro Temporal de Vida 
+                sum1Input.value = realValue;
+            });
+        });
+    </script>
+    <!-- Desde aquí se bloquea, en caso de que no haya subasta -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var sum2Input = document.querySelector('#form2 #id_oferta');
+
+            sum2Input.addEventListener('input', function() {
+            // Obtener el valor actual del campo y eliminar cualquier caracter no numérico
+                var value = this.value.replace(/[^\d.]/g, '');
+
+            // Si hay más de un punto decimal, eliminar los adicionales
+                var parts = value.split('.');
+                if (parts.length > 2) {
+                    parts = [parts.shift(), parts.join('.')];
+                }
+
+            // Formatear la parte entera como dólar
+                var integerPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+            // Si hay parte decimal, añadir la parte decimal formateada
+                var formattedValue = (parts.length === 2) ? '$' + integerPart + '.' + parts[1] : '$' + integerPart;
+
+            // Asignar el valor formateado de vuelta al campo visualmente
+                this.value = formattedValue;
+
+            // Actualizar el valor real del campo sin el símbolo de dólar ni las comas de separación
+            // Esto es necesario para que las validaciones en el primer script funcionen correctamente
+                this.dataset.realValue = value;
+            });
+            document.getElementById('fm2').addEventListener('submit', function() {
+                var sum2Input = document.querySelector('#form2 #id_oferta');
+                var realValue = sum2Input.dataset.realValue;
+
+        // Asignar el valor real al campo antes de enviar el formulario.
+                sum2Input.value = realValue;
+            });
+        });
+    </script>
+    <!--Hasta aquí se bloquea, en caso de que no haya subasta -->
+
+    <!-- En caso, de no haber, desde aquí se bloquea -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var sumxInput = document.querySelector('#formx #id_oferta');
+
+            sumxInput.addEventListener('input', function() {
+            // Obtener el valor actual del campo y eliminar cualquier caracter no numérico
+                var value = this.value.replace(/[^\d.]/g, '');
+
+            // Si hay más de un punto decimal, eliminar los adicionales
+                var parts = value.split('.');
+                if (parts.length > 2) {
+                    parts = [parts.shift(), parts.join('.')];
+                }
+
+            // Formatear la parte entera como dólar
+                var integerPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+            // Si hay parte decimal, añadir la parte decimal formateada
+                var formattedValue = (parts.length === 2) ? '$' + integerPart + '.' + parts[1] : '$' + integerPart;
+
+            // Asignar el valor formateado de vuelta al campo visualmente
+                this.value = formattedValue;
+
+            // Actualizar el valor real del campo sin el símbolo de dólar ni las comas de separación
+            // Esto es necesario para que las validaciones en el primer script funcionen correctamente
+                this.dataset.realValue = value;
+            });
+            document.getElementById('fm-x').addEventListener('submit', function() {
+                var sumxInput = document.querySelector('#formx #id_oferta');
+                var realValue = sumxInput.dataset.realValue;
+
+        // Asignar el valor real al campo antes de enviar el formulario.
+                sumxInput.value = realValue;
+            });
+        });
+    </script>
+    <!-- Hasta aquí se bloquea -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var dui1Input = document.querySelector('#form1 #id_dui_nit');
+            var dui2Input = document.querySelector('#form2 #id_dui_nit');
+            //var duixInput = document.querySelector('#formx #id_dui_nit');
+    
+            dui1Input.addEventListener('input', function() {
+                // Obtener el valor actual del campo y eliminar cualquier carácter no alfanumérico (letra o número)
+                var value = this.value.replace(/[^a-zA-Z0-9]/g, '');
+    
+                // Asignar el valor formateado de vuelta al campo visualmente
+                this.value = value;
+            });
+            dui2Input.addEventListener('input', function() {
+                // Obtener el valor actual del campo y eliminar cualquier carácter no alfanumérico (letra o número)
+                var value = this.value.replace(/[^a-zA-Z0-9]/g, '');
+    
+                // Asignar el valor formateado de vuelta al campo visualmente
+                this.value = value;
+            });
+            //duixInput.addEventListener('input', function() {
+                // Obtener el valor actual del campo y eliminar cualquier carácter no alfanumérico (letra o número)
+                //var value = this.value.replace(/[^a-zA-Z0-9]/g, '');
+    
+                // Asignar el valor formateado de vuelta al campo visualmente
+                //this.value = value;
+            //});
+        });
+    </script>
+    <script>
+        const imagenes1 = [
+          "{% static 'Imagen de Prueba 1.png' %}",
+          "{% static 'Imagen de Prueba 2.png' %}",
+          "{% static 'Imagen de Prueba 3.png' %}",
+          "{% static 'Imagen de Prueba 4.png' %}",
+          "{% static 'Imagen de Prueba 5.png' %}",
+          "{% static 'Imagen de Prueba 6.png' %}",
+        ];
+        let índiceActual1 = 0;
+      
+        function abrirVisor1(índice1) {
+          índiceActual1 = índice1;
+          document.getElementById('imagen-visor1').src = imagenes1[índiceActual1];
+          document.getElementById('visor1').style.display = 'flex';
+        }
+      
+        function cerrarVisor1() {
+          document.getElementById('visor1').style.display = 'none';
+        }
+      
+        function cambiarImagen1(dirección1) {
+          índiceActual1 = (índiceActual1 + dirección1 + imagenes1.length) % imagenes1.length;
+          document.getElementById('imagen-visor1').src = imagenes1[índiceActual1];
+        }
+    </script>
+    <!-- Desde aquí se bloquea, en caso de que no haya subasta -->
+    <script>
+        const imagenes2 = [
+          "{% static 'Imagen de Prueba 7.png' %}",
+          "{% static 'Imagen de Prueba 8.png' %}",
+          "{% static 'Imagen de Prueba 9.png' %}",
+          "{% static 'Imagen de Prueba 10.png' %}",
+          "{% static 'Imagen de Prueba 11.png' %}",
+          "{% static 'Imagen de Prueba 12.png' %}",
+        ];
+        let índiceActual2 = 0;
+      
+        function abrirVisor2(índice2) {
+          índiceActual2 = índice2;
+          document.getElementById('imagen-visor2').src = imagenes2[índiceActual2];
+          document.getElementById('visor2').style.display = 'flex';
+        }
+      
+        function cerrarVisor2() {
+          document.getElementById('visor2').style.display = 'none';
+        }
+      
+        function cambiarImagen2(dirección2) {
+          índiceActual2 = (índiceActual2 + dirección2 + imagenes2.length) % imagenes2.length;
+          document.getElementById('imagen-visor2').src = imagenes2[índiceActual2];
+        }
+    </script>
+     <!--Hasta aquí se bloquea, en caso de que no haya subasta -->
+
+    <!-- En caso de no haber, desde aquí se bloquea -->
+    <script>
+        const imagenesx = [
+          "{% static 'Imagen del dron 1.png' %}",
+          "{% static 'Imagen del dron 2.png' %}",
+          "{% static 'Imagen del dron 3.png' %}",
+          "{% static 'Imagen del dron 4.png' %}",
+        ];
+        let índiceActualx = 0;
+      
+        function abrirVisorx(índicex) {
+          índiceActualx = índicex;
+          document.getElementById('imagen-visor-x').src = imagenesx[índiceActualx];
+          document.getElementById('visor-x').style.display = 'flex';
+        }
+      
+        function cerrarVisorx() {
+          document.getElementById('visor-x').style.display = 'none';
+        }
+      
+        function cambiarImagenx(direcciónx) {
+          índiceActualx = (índiceActualx + direcciónx + imagenesx.length) % imagenesx.length;
+          document.getElementById('imagen-visor-x').src = imagenesx[índiceActualx];
+        }
+    </script>
+    <!-- En caso de no haber, hasta aquí se bloquea -->
+</body>
+</html>
+{% endblock %}

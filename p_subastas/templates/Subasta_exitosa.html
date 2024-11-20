@@ -1,0 +1,29 @@
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="{% static 'atlán.png' %}">
+    <link rel="stylesheet" href="{% static 'formato2.css' %}">
+    <title>Subastas</title>
+</head>
+<body>
+    <div class="bar">
+
+    </div>
+    <div class="contenedor">
+        <div class="contenido">
+            <img src="{% static 'check.png' %}" alt="Ícono de carpeta" class="ícono">
+            <p class="mensaje">Se ha registrado exitosamente su oferta</p>
+        </div>
+    </div>
+    <hr id="línea">
+    <h3 id="subtítulo1">Cualquier consulta, puede comunicarse a través de nuestros medios:</h3>
+    <h3 id="email">Correo: aseguradoatlantida@seatlan.sv</h3>
+    <h3 id="telefo">Tel: 2283-0000</h3>
+</body>
+</html>
+{% endblock %}

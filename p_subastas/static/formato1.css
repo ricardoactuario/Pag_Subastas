@@ -1,0 +1,522 @@
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.barra {
+    display: flex;
+    height: 40px;
+    background: rgb(226, 30, 48);
+    background: linear-gradient(-180deg
+    , rgba(226, 30, 48, 1) 0%, rgba(189, 26, 41, 1) 100%);
+}
+#título_subasta {
+    font-weight: bold;
+    margin-top: 40px;
+    color: #e31e30;
+    font-size: 40px;
+    text-align: center;
+}
+.párrafo-contenedor {
+    width: 60%;
+    font-size: 20px;
+    text-align: justify;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para un efecto estético */
+    border-radius: 8px; /* Bordes redondeados */
+
+    margin-left: 17%;
+}
+/* Primer contenedor */
+/* Contenedor principal */
+#vehículos-container1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-top: 90px;
+    margin-bottom: 100px;
+    background-color: #ffffff;
+}
+
+/* Tarjeta del vehículo */
+.tarjeta-vehículo1 {
+    width: 80%;
+    max-width: 700px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    background: linear-gradient(to right, #e0e0e0, #f0f0f0);
+}
+
+/* Configuración de dinamización de imagen1 */
+.contenedor-imagen1 {
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Alinea elementos en columna */
+    align-items: center; /* Centra el texto horizontalmente */
+    margin-top: 10px; /* Espaciado superior opcional */
+}
+
+.texto-miniatura1 {
+    font-size: 15px; /* Tamaño de letra pequeño */
+    color: white; /* Color blanco */
+    background-color: #6c7a89; /* Fondo gris oscuro */
+    text-align: center; /* Centrar texto */
+    margin-top: 5px; /* Espaciado entre imagen y texto */
+    padding: 2px 5px; /* Espaciado interno */
+    border-radius: 3px; /* Bordes redondeados */
+    display: inline-block; /* Adapta el tamaño al texto */
+}
+/* Configuraciones para visor */
+
+#visor1 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+#visor1 img {
+    max-width: 90%;
+    max-height: 80%;
+}
+.botón1 {
+    position: absolute;
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 1001;
+}
+.botón-cerrar1 {
+    top: 10px;
+    right: 20px;
+}
+.botón-anterior1 {
+    left: 20px;
+}
+.botón-siguiente1 {
+    right: 20px;
+}
+/* Encabezado del vehículo */
+.info-vehículo1 h3 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Detalles del vehículo */
+.detalles-vehículo1 {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Imagen del vehículo */
+.detalles-vehículo1 img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Información detallada */
+.detalles-textos1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+/* Botón para participar en la subasta */
+.btn-participar1 {
+    background-color: #b31515dc;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+/* Formulario de oferta (oculto por defecto) */
+.formulario-oferta1 {
+    margin-top: 15px;
+    padding: 25px;
+    background-color: #d0d0d0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formulario-oferta1 form {
+    padding-left: 25%;
+}
+.formulario-oferta1 label, .formulario-oferta1 input {
+    display: block;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    border-style: none;
+    width: 70%;
+    height: 18px;
+    font-size: 16px;
+}
+
+.btn-ofertar1 {
+    background-color: #b31515dc;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 25%;
+}
+
+/* Segundo contenedor */
+/* Contenedor principal */
+#vehículos-container2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    background-color: #ffffff;
+    margin-bottom: 100px;
+}
+
+/* Tarjeta del vehículo */
+.tarjeta-vehículo2 {
+    width: 80%;
+    max-width: 700px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    background: linear-gradient(to right, #e0e0e0, #f0f0f0);
+}
+/* Configuración de dinamización de imagen2 */
+.contenedor-imagen2 {
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Alinea elementos en columna */
+    align-items: center; /* Centra el texto horizontalmente */
+    margin-top: 10px; /* Espaciado superior opcional */
+}
+
+.texto-miniatura2 {
+    font-size: 15px; /* Tamaño de letra pequeño */
+    color: white; /* Color blanco */
+    background-color: #6c7a89; /* Fondo gris oscuro */
+    text-align: center; /* Centrar texto */
+    margin-top: 5px; /* Espaciado entre imagen y texto */
+    padding: 2px 5px; /* Espaciado interno */
+    border-radius: 3px; /* Bordes redondeados */
+    display: inline-block; /* Adapta el tamaño al texto */
+}
+/* Encabezado del vehículo */
+.info-vehículo2 h3 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Detalles del vehículo */
+.detalles-vehículo2 {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Imagen del vehículo */
+.detalles-vehículo2 img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+}
+/* Configuraciones para visor */
+
+#visor2 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+#visor2 img {
+    max-width: 90%;
+    max-height: 80%;
+}
+.botón2 {
+    position: absolute;
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 1001;
+}
+.botón-cerrar2 {
+    top: 10px;
+    right: 20px;
+}
+.botón-anterior2 {
+    left: 20px;
+}
+.botón-siguiente2 {
+    right: 20px;
+}
+/* Información detallada */
+.detalles-textos2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+/* Botón para participar en la subasta */
+.btn-participar2 {
+    background-color: #b31515dc;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+/* Formulario de oferta (oculto por defecto) */
+.formulario-oferta2 {
+    margin-top: 15px;
+    padding: 25px;
+    background-color: #d0d0d0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formulario-oferta2 form {
+    padding-left: 25%;
+}
+.formulario-oferta2 label, .formulario-oferta2 input {
+    display: block;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    border-style: none;
+    width: 70%;
+    height: 18px;
+    font-size: 16px;
+}
+.btn-ofertar2 {
+    background-color: #b31515dc;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 25%;
+}
+/* Configuración para otros */
+.botones {
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+.botón-sección {
+    padding: 12px 30px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botón-sección:hover {
+    background-color: #e0e0e0;
+}
+
+.botón-sección.activo {
+    background-color: rgb(226, 30, 48);;
+    color: white;
+    border-color: rgb(226, 30, 48);;
+}
+
+/* Estilos para las secciones */
+.sección {
+    display: none; /* Ocultamos las secciones por defecto */
+}
+
+.sección.activo {
+    display: block; /* Mostramos únicamente la sección activa */
+}
+
+#otros-container-x {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    background-color: #ffffff;
+    margin-bottom: 100px;
+    margin-top: 70px;
+}
+
+/* Tarjeta del vehículo */
+.tarjeta-otros-x {
+    width: 80%;
+    max-width: 700px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    background: linear-gradient(to right, #e0e0e0, #f0f0f0);
+}
+/* Configuración de dinamización de imagen2 */
+.contenedor-imagen-x {
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Alinea elementos en columna */
+    align-items: center; /* Centra el texto horizontalmente */
+    margin-top: 10px; /* Espaciado superior opcional */
+}
+
+.texto-miniatura-x {
+    font-size: 15px; /* Tamaño de letra pequeño */
+    color: white; /* Color blanco */
+    background-color: #6c7a89; /* Fondo gris oscuro */
+    text-align: center; /* Centrar texto */
+    margin-top: 5px; /* Espaciado entre imagen y texto */
+    padding: 2px 5px; /* Espaciado interno */
+    border-radius: 3px; /* Bordes redondeados */
+    display: inline-block; /* Adapta el tamaño al texto */
+}
+/* Encabezado del vehículo */
+.info-otros-x h3 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Detalles del vehículo */
+.detalles-otros-x {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Imagen del vehículo */
+.detalles-otros-x img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+}
+/* Configuraciones para visor */
+
+#visor-x {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+#visor-x img {
+    max-width: 90%;
+    max-height: 80%;
+}
+.botón-x {
+    position: absolute;
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 1001;
+}
+.botón-cerrar-x {
+    top: 10px;
+    right: 20px;
+}
+.botón-anterior-x {
+    left: 20px;
+}
+.botón-siguiente-x {
+    right: 20px;
+}
+/* Información detallada */
+.detalles-textos-x {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+/* Botón para participar en la subasta */
+.btn-participar-x {
+    background-color: #b31515dc;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+/* Formulario de oferta (oculto por defecto) */
+.formulario-oferta-x {
+    margin-top: 15px;
+    padding: 25px;
+    background-color: #d0d0d0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formulario-oferta-x form {
+    padding-left: 25%;
+}
+.formulario-oferta-x label, .formulario-oferta-x input {
+    display: block;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    border-style: none;
+    width: 70%;
+    height: 18px;
+    font-size: 16px;
+}
+.btn-ofertar-x {
+    background-color: #b31515dc;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 25%;
+}
